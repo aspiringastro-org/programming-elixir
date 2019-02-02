@@ -45,4 +45,34 @@ defmodule Exercise1 do
     |> Enum.reverse
     |> IO.inspect(label: "final")
   end
+
+
+  @doc """
+  
+      iex> Exercise1.sum([1,2,3,4,5,6,7,8,9])
+      45
+
+  """
+  def sum(list) do
+    sum(list, 0)
+  end
+
+  defp sum([item | rest], acc) when is_number(item) do
+    sum(rest, acc + item)
+  end
+
+  defp sum([], acc) do
+    acc
+  end
+
+  @doc """
+  
+      iex> Exercise1.pair_tuple_to_list({1,2})
+      [1,2]
+      
+  """
+  def pair_tuple_to_list({t1, t2}) do
+    [t1, t2]
+  end
+
 end
